@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4</title>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <h1>INST377 - Lab 4</h1>
+        <div class="container">
+            <div class="input-box">
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+                <button onclick="alertName()">Alert Me!</button>
+                <script type ="text/javascript">
+                    function alertName() {
+                        const name = document.getElementById('name').value;
+                        if (name) {
+                            alert(`Hi ${name}!`);
+                        }
+                    }
+                </script>
+            </div>
+
+            <div class="input-box">
+                <label for="text">Text Tester:</label>
+                <input type="text" id="text">
+                <button onclick="validateText()">Validate Text</botton>
+                <script type ="text/javascript">
+                    function validateText() {
+                        var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                        const text = document.getElementById('text').value;
+                        if (validation.test(text)) {
+                            alert('Your text has at least on special character.');
+                        } else {
+                            alert('Text is valid!');
+                        }
+                    }
+                </script>
+            </div>
+
+            <div class="button-box">
+                <button onclick="changeColor()">Change Color</button>
+                <script type ="text/javascript">
+                    function changeColor() {
+                        if (document.body.style.backgroundColor == 'aqua') {
+                            document.body.style.backgroundColor = 'green';
+                        } else {
+                            document.body.style.backgroundColor = 'aqua'
+                        }
+                    }
+                </script>
+            </div>
+
+            <div class="button-box">
+                <button onclick="addText()">Add Text</button>
+                <script type ="text/javascript">
+                    function addText(){
+                        const header = document.querySelector('h1');
+                        header.textContent += " - Adding Text"
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
